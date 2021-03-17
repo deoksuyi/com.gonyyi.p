@@ -22,10 +22,11 @@
   
   <!-- from LOCAL -->
   <base id="baseTarget" target="_self" href="https://p.gonyyi.com"> 
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/>
+  <!-- <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/> -->
 
   <!-- from CENTRAL -->
   <link rel="stylesheet" type="text/css" href="https://gonyyi.com/gonyyi.css"> 
+  <!-- <link rel="stylesheet" type="text/css" href="gonyyi.css">  -->
   <link rel="icon" href="https://gonyyi.com/img/favicon.png" type="image/png"/>
   
 
@@ -33,33 +34,19 @@
   <title>gonyyi.p</title> 
 
   <style type="text/css"> 
-    <!--
-    var {
-      border-radius: 10px;
-      background: #eee;
-      padding: 0 5px;
-      font-size: 70%;
-      margin: 0 0px 0 5px;
-    }
-
-    var.opensource {
-      background: #99ff99;
-    }
-
-    .optional {
-      display: none;
-    }
     .detail {
+      /*display: none;*/
       margin: 5px;
-      color: #999;
+      color: #ccc;
       font-style: italic;
-      font-size: 75%;
-      border-left: 5px solid #dadada;
+      font-size: 70%;
+      border-left: 5px solid #f2f2f2;
       padding-left: 10px;
     }
 
-    /* Disable highlight by browser */
-    input:focus, select:focus, textarea:focus, button:focus {outline: none;}
+    /* Disable highlight (outline) by browser */
+    .overrideOutline:focus {outline: none;}
+    /*input:focus, select:focus, textarea:focus, button:focus {outline: none;}*/
 
     button {
       background-color: #fff;
@@ -71,23 +58,25 @@
       text-align: center;
       font-size: 75%;
     }
+    button:hover {
+      background-color: #f2f2f2;
+    }
 
-    -->
   </style> <!-- ADDITIONAL page specific CSS required -->
 </head>
 
 <body>
 
   <h1><a href="https://gonyyi.com/">gonyyi</a><i>.p</i></h1> <!-- SITE-NAME -->
-
+<!-- 
   <p>
-    <button id="toggleDetail" onClick="toggle_detail();">detail</button>
+    <button id="toggleDetail" class="overrideOutline" onClick="toggle_detail();">detail</button>
   </p>
 
   <script type="text/javascript">
     var show = 0;
     var toggleDetail = document.getElementById("toggleDetail");
-    var allOptional = document.getElementsByClassName('optional');
+    var allOptional = document.getElementsByClassName('detail');
     function toggle_detail() {
       if (show == 0) {
         show_detail();
@@ -111,73 +100,66 @@
       toggleDetail.style.color = "#555";
       show = 1;
     };
-  </script>
+  </script> -->
 
   <h2>web</h2><!-- CATEGORY or Message (if only one) -->
-  <p class="optional detail">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
+  <p class="detail">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
   <ul>
     <li>
       <a>restaurant-something.com</a>
-      <var>java</var>
-      <var>golang</var>
-      <var>html5</var>
-      <var>docker</var>
-      <var>gcp</var>
+      <p class="detail">
+        Created using Java, Golang
+      </p>
     </li>
   </ul>
 
+
   <h2>software</h2>
-  <p class="optional detail">mobile apps I have created</p>
+  <p class="detail">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
   <ul>
     <li>
-      <a>dating app</a><var>dart</var><var>flutter</var>
-      <p class="optional detail">created a dating app for blah blah</p>
-      <ul>
-        <li><a>Apple App Store</a></li>
-        <li><a>Android Store</a></li>
-      </ul>
+      <a>dating app</a>
+      <p class="detail">
+        Created a dating app for blah blah.
+      </p>
     </li>
 
     <li>
       <a>video manager</a>
-      <var class="opensource">open-source</var>
-      <var>golang</var>
-      <var>dart</var>
-      <var>flutter</var>
-      <p class="optional detail">local video file manager</p>
-    </li>    
+      <p class="detail">local video file manager</p>
+    </li>
   </ul>
 
   <h2>libraries</h2>
-  <p class="optional detail">created a dating app for blah blah</p>
+  <p class="detail">my libraries</p>
   <ul>
     <li>
       <a>alog</a>
-      <var class="opensource">open-source</var>
-      <var>golang</var>
-      <p class="optional detail">created a dating app for blah blah</p>
+      <p class="detail">created a dating app for blah blah</p>
     </li>
   </ul>
 
   <h2>posts</h2>
-  <p class="optional detail">created a dating app for blah blah</p>
+  <p class="detail">
+    created a dating app for blah blah
+  </p>
   <ul>
     <li>
-      <a>what i learn from writing a logger</a><var>golang</var>
+      <a>what i learned from writing a logger</a>
     </li>
     <li>
-      <a>how to use and implement alog</a><var>golang</var>
+      <a>how to use and implement alog</a>
     </li>
   </ul>
 
   <h2>design</h2>
-  <p class="optional detail">created a dating app for blah blah</p>
+  <p class="detail">created a dating app for blah blah</p>
   <ul>
     <li>
-      deoksuyiga - home design <var>html5</var>
+      deoksuyiga - home design
     </li>
     <li>
-      dsyim maker <var>html5</var>
+      dsyim maker
     </li>
   </ul>
 
