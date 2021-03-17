@@ -7,10 +7,18 @@
   <meta property="og:locale" content="en_US"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://p.gonyyi.com"/>
-  <meta property="og:image" content="img/og-img.png"/> <!-- from LOCAL -->
-  <meta property="og:site_name" content="gonyyi.p"/> <!-- SITE-NAME -->
-  <meta property="og:title" content="public - gonyyi"/> <!-- name + " - gonyyi" -->
-  <meta property="og:description" content="things i published and shared with others"/> <!-- content description -->
+  
+  <!-- from LOCAL -->
+  <meta property="og:image" content="img/og-img.png"/> 
+  
+  <!-- SITE-NAME -->
+  <meta property="og:site_name" content="gonyyi.p"/>
+  
+  <!-- name + " - gonyyi" -->
+  <meta property="og:title" content="public - gonyyi"/> 
+
+  <!-- content description -->
+  <meta property="og:description" content="things i published and shared with others"/> 
   
   <!-- from LOCAL -->
   <base id="baseTarget" target="_self" href="https://p.gonyyi.com"> 
@@ -20,27 +28,32 @@
   <link rel="stylesheet" type="text/css" href="https://gonyyi.com/gonyyi.css"> 
   <link rel="icon" href="https://gonyyi.com/img/favicon.png" type="image/png"/>
   
-  <!-- LOCAL TESTING: Uncomment below for local testing -->
-  <base id="baseTarget" target="_self" href="./"> 
-  <link rel="stylesheet" type="text/css" href="gonyyi.css"> 
 
-  <title>gonyyi.p</title> <!-- SITE-NAME -->
+  <!-- SITE-NAME -->
+  <title>gonyyi.p</title> 
+
   <style type="text/css"> 
     <!--
     var {
       border-radius: 10px;
-      background: #cce6ff;
+      background: #eee;
       padding: 0 5px;
-      font-size: 75%;
-      margin: 0 0px 0 10px;
+      font-size: 70%;
+      margin: 0 0px 0 5px;
     }
+
+    var.opensource {
+      background: #99ff99;
+    }
+
     .optional {
       display: none;
     }
-    .desc {
+    .detail {
       margin: 5px;
       color: #999;
       font-style: italic;
+      font-size: 75%;
       border-left: 5px solid #dadada;
       padding-left: 10px;
     }
@@ -49,10 +62,10 @@
     input:focus, select:focus, textarea:focus, button:focus {outline: none;}
 
     button {
-      background-color: transparent;
+      background-color: #fff;
       border-radius: 10px;
       border: 3px solid #ccc;
-      color: #ccc;
+      color: #bbb;
       width: 100px;
       height: 30px;
       text-align: center;
@@ -87,7 +100,7 @@
         allOptional[i].style.display = 'none';
       }
       toggleDetail.style.borderColor = "#ccc";
-      toggleDetail.style.color = "#ccc";
+      toggleDetail.style.color = "#bbb";
       show = 0;
     };
     function show_detail() {
@@ -101,37 +114,53 @@
   </script>
 
   <h2>web</h2><!-- CATEGORY or Message (if only one) -->
-  <p class="optional desc">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
+  <p class="optional detail">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
   <ul>
     <li>
-      <a>restaurant-something.com</a><var>java</var><var>golang</var><var>html5</var><var>docker</var><var>gcp</var>
+      <a>restaurant-something.com</a>
+      <var>java</var>
+      <var>golang</var>
+      <var>html5</var>
+      <var>docker</var>
+      <var>gcp</var>
     </li>
   </ul>
 
-  <h2>mobile</h2>
-  <p class="optional desc">mobile apps I have created</p>
+  <h2>software</h2>
+  <p class="optional detail">mobile apps I have created</p>
   <ul>
     <li>
       <a>dating app</a><var>dart</var><var>flutter</var>
-      <p class="optional desc">created a dating app for blah blah</p>
+      <p class="optional detail">created a dating app for blah blah</p>
       <ul>
         <li><a>Apple App Store</a></li>
         <li><a>Android Store</a></li>
       </ul>
     </li>
+
+    <li>
+      <a>video manager</a>
+      <var class="opensource">open-source</var>
+      <var>golang</var>
+      <var>dart</var>
+      <var>flutter</var>
+      <p class="optional detail">local video file manager</p>
+    </li>    
   </ul>
 
   <h2>libraries</h2>
-  <p class="optional desc">created a dating app for blah blah</p>
+  <p class="optional detail">created a dating app for blah blah</p>
   <ul>
     <li>
-      <a>alog</a> <var>golang</var>
-      <p class="optional desc">created a dating app for blah blah</p>
+      <a>alog</a>
+      <var class="opensource">open-source</var>
+      <var>golang</var>
+      <p class="optional detail">created a dating app for blah blah</p>
     </li>
   </ul>
 
-  <h2>writing</h2>
-  <p class="optional desc">created a dating app for blah blah</p>
+  <h2>posts</h2>
+  <p class="optional detail">created a dating app for blah blah</p>
   <ul>
     <li>
       <a>what i learn from writing a logger</a><var>golang</var>
@@ -142,7 +171,7 @@
   </ul>
 
   <h2>design</h2>
-  <p class="optional desc">created a dating app for blah blah</p>
+  <p class="optional detail">created a dating app for blah blah</p>
   <ul>
     <li>
       deoksuyiga - home design <var>html5</var>
