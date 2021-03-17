@@ -21,8 +21,8 @@
   <link rel="icon" href="https://gonyyi.com/img/favicon.png" type="image/png"/>
   
   <!-- LOCAL TESTING: Uncomment below for local testing -->
-  <!-- <base id="baseTarget" target="_self" href="./">  -->
-  <!-- <link rel="stylesheet" type="text/css" href="gonyyi.css">  -->
+  <base id="baseTarget" target="_self" href="./"> 
+  <link rel="stylesheet" type="text/css" href="gonyyi.css"> 
 
   <title>gonyyi.p</title> <!-- SITE-NAME -->
   <style type="text/css"> 
@@ -45,22 +45,29 @@
       padding-left: 10px;
     }
 
-    input[type=checkbox] { 
-      /* see more on: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
-      height: 20px;
-      width: 20px;
+    /* Disable highlight by browser */
+    input:focus, select:focus, textarea:focus, button:focus {outline: none;}
+
+    button {
+      background-color: transparent;
+      border-radius: 10px;
+      border: 3px solid #ccc;
+      color: #000;
+      width: 100px;
+      text-align: center;
+      font-size: 75%;
     }
-    
+
     -->
   </style> <!-- ADDITIONAL page specific CSS required -->
 </head>
 
 <body>
 
-  <h1><a href="/">gonyyi</a><i>.p</i></h1> <!-- SITE-NAME -->
+  <h1><a href="https://gonyyi.com/">gonyyi</a><i>.p</i></h1> <!-- SITE-NAME -->
 
-  <p class="desc">
-    detail: <a id="toggleDetail" onClick="toggle_detail();">show</a>
+  <p>
+    <button id="toggleDetail" onClick="toggle_detail();">detail</button>
   </p>
 
   <script type="text/javascript">
@@ -78,14 +85,14 @@
       for (var i = 0; i < allOptional.length; i++) {
         allOptional[i].style.display = 'none';
       }
-      toggleDetail.innerHTML = "show";
+      toggleDetail.style.borderColor = "#ccc";
       show = 0;
     };
     function show_detail() {
       for (var i = 0; i < allOptional.length; i++) {
         allOptional[i].style.display = 'block';
       }
-      toggleDetail.innerHTML = "hide";
+      toggleDetail.style.borderColor = "#3da1ff";
       show = 1;
     };
   </script>
