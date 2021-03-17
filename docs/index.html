@@ -12,10 +12,14 @@
   <meta property="og:title" content="public - gonyyi"/> <!-- name + " - gonyyi" -->
   <meta property="og:description" content="things i published and shared with others"/> <!-- content description -->
   
-  <base id="baseTarget" target="_self" href="https://p.gonyyi.com"> <!-- from LOCAL -->
+  <!-- from LOCAL -->
+  <!-- <base id="baseTarget" target="_self" href="https://p.gonyyi.com">  -->
+
   <link rel="icon" href="https://gonyyi.com/img/favicon.png" type="image/png"/> <!-- from CENTRAL -->
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/> <!-- from LOCAL -->
-  <link rel="stylesheet" type="text/css" href="https://gonyyi.com/gonyyi.css"> <!-- from CENTRAL; rename it to common.css, any additional will be from local -->
+  
+  <!-- from CENTRAL; rename it to common.css, any additional will be from local -->
+  <link rel="stylesheet" type="text/css" href="gonyyi.css"> 
 
   <title>gonyyi.p</title> <!-- SITE-NAME -->
   <style type="text/css"> 
@@ -27,56 +31,23 @@
       font-size: 75%;
       margin: 0 0px 0 10px;
     }
-    .desc {
-      /*display: block;*/
+    .optional {
       display: none;
-      max-width: 600px;
-      margin: 15px;
+    }
+    .desc {
+      margin: 5px;
       color: #999;
-      font-weight: 100;
       font-style: italic;
-      font-size: 75%;
       border-left: 5px solid #dadada;
       padding-left: 10px;
     }
-    ul {
-      /*margin-left: 20px;*/
-      padding-left: 25px;
-    }
-    li {
-      list-style-type: none;
 
-      /*width: 100%;*/
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      
-
-    }
-    li::before {
-      content: "# ";
-      color: lightsalmon;
-    }
-    /*::marker {
-      display: list-item;
-      content: "# ";
-      content: "#" counter(ul) " ";
-      color: lightsalmon;
-      font-weight: bold;
-    }*/
-
-    input { 
-      /* see: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+    input[type=checkbox] { 
+      /* see more on: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
       height: 20px;
       width: 20px;
     }
-
-    .optional {
-      color: gray;
-      font-size: 80%;
-      /*padding-left: 20px;*/
-    }
-
+    
     -->
   </style> <!-- ADDITIONAL page specific CSS required -->
 </head>
@@ -85,32 +56,39 @@
 
   <h1><a href="/">gonyyi</a><i>.p</i></h1> <!-- SITE-NAME -->
 
-  <p class="optional">
-      <input type="checkbox" id="showDesc" name="showDesc" value="showDesc" onClick="check();"/>
-      <label for="showDesc">show detail description</label>
+  <p class="desc">
+    detail: <a id="toggleDetail" onClick="toggle_detail();">show</a>
   </p>
 
   <script type="text/javascript">
-    // Get the checkbox
-    var checkBox = document.getElementById("showDesc");
-    var all = document.getElementsByClassName('desc');
-
-    function check() {
-      // If the checkbox is checked, display the output text
-      if (checkBox.checked == true){  
-        for (var i = 0; i < all.length; i++) {
-          all[i].style.display = 'block';
-        }
+    var show = 0;
+    var toggleDetail = document.getElementById("toggleDetail");
+    var allOptional = document.getElementsByClassName('optional');
+    function toggle_detail() {
+      if (show == 0) {
+        show_detail();
       } else {
-        for (var i = 0; i < all.length; i++) {
-          all[i].style.display = 'none';
-        }
-      }  
-    }
+        hide_detail();
+      }
+    };
+    function hide_detail() {
+      for (var i = 0; i < allOptional.length; i++) {
+        allOptional[i].style.display = 'none';
+      }
+      toggleDetail.innerHTML = "show";
+      show = 0;
+    };
+    function show_detail() {
+      for (var i = 0; i < allOptional.length; i++) {
+        allOptional[i].style.display = 'block';
+      }
+      toggleDetail.innerHTML = "hide";
+      show = 1;
+    };
   </script>
 
   <h2>web</h2><!-- CATEGORY or Message (if only one) -->
-  <p class="desc">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
+  <p class="optional desc">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
   <ul>
     <li>
       <a>restaurant-something.com</a><var>java</var><var>golang</var><var>html5</var><var>docker</var><var>gcp</var>
@@ -118,11 +96,11 @@
   </ul>
 
   <h2>mobile</h2>
-  <p class="desc">mobile apps I have created</p>
+  <p class="optional desc">mobile apps I have created</p>
   <ul>
     <li>
       <a>dating app</a><var>dart</var><var>flutter</var>
-      <p class="desc">created a dating app for blah blah</p>
+      <p class="optional desc">created a dating app for blah blah</p>
       <ul>
         <li><a>Apple App Store</a></li>
         <li><a>Android Store</a></li>
@@ -131,16 +109,16 @@
   </ul>
 
   <h2>libraries</h2>
-  <p class="desc">created a dating app for blah blah</p>
+  <p class="optional desc">created a dating app for blah blah</p>
   <ul>
     <li>
       <a>alog</a> <var>golang</var>
-      <p class="desc">created a dating app for blah blah</p>
+      <p class="optional desc">created a dating app for blah blah</p>
     </li>
   </ul>
 
   <h2>writing</h2>
-  <p class="desc">created a dating app for blah blah</p>
+  <p class="optional desc">created a dating app for blah blah</p>
   <ul>
     <li>
       <a>what i learn from writing a logger</a><var>golang</var>
@@ -151,7 +129,7 @@
   </ul>
 
   <h2>design</h2>
-  <p class="desc">created a dating app for blah blah</p>
+  <p class="optional desc">created a dating app for blah blah</p>
   <ul>
     <li>
       deoksuyiga - home design <var>html5</var>
