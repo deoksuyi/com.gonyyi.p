@@ -13,18 +13,56 @@
   <meta property="og:description" content="things i published and shared with others"/> <!-- content description -->
   
   <base id="baseTarget" target="_self" href="https://p.gonyyi.com"> <!-- from LOCAL -->
-  <link rel="icon" href="https://goyyi.com/img/favicon.png" type="image/png"/> <!-- from CENTRAL -->
+  <link rel="icon" href="https://gonyyi.com/img/favicon.png" type="image/png"/> <!-- from CENTRAL -->
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="any"/> <!-- from LOCAL -->
   <link rel="stylesheet" type="text/css" href="https://gonyyi.com/gonyyi.css"> <!-- from CENTRAL; rename it to common.css, any additional will be from local -->
 
   <title>gonyyi.p</title> <!-- SITE-NAME -->
   <style type="text/css"> 
     <!--
-    hr{
-      border-color: #ccc !important; 
-      border-width:0 0 1px 0 !important; 
-      height:1px !important;
+    var {
+      border-radius: 10px;
+      background: #cce6ff;
+      padding: 0 5px;
+      font-size: 75%;
+      margin: 0 0px 0 10px;
     }
+    .desc {
+      /*display: block;*/
+      display: none;
+      max-width: 600px;
+      margin: 15px;
+      color: #999;
+      font-weight: 100;
+      font-style: italic;
+      font-size: 75%;
+      border-left: 5px solid #dadada;
+      padding-left: 10px;
+    }
+    ::marker {
+      content: "# ";
+      color: lightsalmon;
+    }
+    /*::marker {
+      display: list-item;
+      content: "# ";
+      content: "#" counter(ul) " ";
+      color: lightsalmon;
+      font-weight: bold;
+    }*/
+
+    input { 
+      /* see: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+      height: 20px;
+      width: 20px;
+    }
+
+    .optional {
+      color: gray;
+      font-size: 80%;
+      /*padding-left: 20px;*/
+    }
+
     -->
   </style> <!-- ADDITIONAL page specific CSS required -->
 </head>
@@ -33,53 +71,79 @@
 
   <h1><a href="/">gonyyi</a><i>.p</i></h1> <!-- SITE-NAME -->
 
+  <p class="optional">
+      <input type="checkbox" id="showDesc" name="showDesc" value="showDesc" onClick="check();"/>
+      <label for="showDesc">show detail description</label>
+  </p>
+
+  <script type="text/javascript">
+    // Get the checkbox
+    var checkBox = document.getElementById("showDesc");
+    var all = document.getElementsByClassName('desc');
+
+    function check() {
+      // If the checkbox is checked, display the output text
+      if (checkBox.checked == true){  
+        for (var i = 0; i < all.length; i++) {
+          all[i].style.display = 'block';
+        }
+      } else {
+        for (var i = 0; i < all.length; i++) {
+          all[i].style.display = 'none';
+        }
+      }  
+    }
+  </script>
+
   <h2>web</h2><!-- CATEGORY or Message (if only one) -->
+  <p class="desc">There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created There are few webistes I have created</p>
   <ul>
     <li>
-      <a href="">restaurant-something.com</a>
-      <ul>
-        <li>this is</li>
-      </ul>
+      <a>restaurant-something.com</a><var>java</var><var>golang</var><var>html5</var><var>docker</var><var>gcp</var>
     </li>
   </ul>
 
   <h2>mobile</h2>
+  <p class="desc">mobile apps I have created</p>
   <ul>
     <li>
-      dating app
+      <a>dating app</a><var>dart</var><var>flutter</var>
+      <p class="desc">created a dating app for blah blah</p>
       <ul>
-        <li>
-          iOS / Andoid
-        </li>
+        <li><a>Apple App Store</a></li>
+        <li><a>Android Store</a></li>
       </ul>
     </li>
   </ul>
 
   <h2>libraries</h2>
+  <p class="desc">created a dating app for blah blah</p>
   <ul>
     <li>
-      alog [golang]
-      <ul>
-        <li>this is a ...</li>
-        <li>https://github.com/gonyyi/alog</li>
-      </ul>
+      <a>alog</a> <var>golang</var>
+      <p class="desc">created a dating app for blah blah</p>
     </li>
   </ul>
 
   <h2>writing</h2>
+  <p class="desc">created a dating app for blah blah</p>
   <ul>
     <li>
-      what i learn from writing a logger (golang)
+      <a>what i learn from writing a logger</a><var>golang</var>
     </li>
     <li>
-      how to use and implement alog (golang)
+      <a>how to use and implement alog</a><var>golang</var>
     </li>
   </ul>
 
   <h2>design</h2>
+  <p class="desc">created a dating app for blah blah</p>
   <ul>
     <li>
-      deoksuyiga - home design
+      deoksuyiga - home design <var>html5</var>
+    </li>
+    <li>
+      dsyim maker <var>html5</var>
     </li>
   </ul>
 
